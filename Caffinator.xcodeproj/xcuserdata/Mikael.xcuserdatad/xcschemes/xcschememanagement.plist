@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Caffinator.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>365C1B681E7B2AA400F4415E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>365C1B7F1E7B2AA500F4415E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>365C1B8A1E7B2AA500F4415E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

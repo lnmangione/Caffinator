@@ -42,6 +42,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.mapView.setRegion(region, animated: true)
         */
         
+        // detect rotation changes
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
         NetworkManager.load(closure: {(locations) in
             if locations != nil {
                 DispatchQueue.main.async {
@@ -53,6 +56,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         })
         
         
+        
+    }
+    
+    // TODO - properly resize views upon rotation
+    func rotated() {
+        if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
+            
+        }
+        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
+            
+        }
+    }
+    
+    // TODO - complete function body
+    func populateMap(){
+        // completion handler to be called after data is loaded
+        // if data has successfully loaded locations, add each annotation
+        // to the mapView
+    }
+    
+    // TODO - complete function body
+    func mapView(_ mapView: MKMapView,
+                 annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl){
+        let annotation = view.annotation
+        if let location = annotation as? Location {
+            // populate views with location information
+        }
     }
 
     override func didReceiveMemoryWarning() {
