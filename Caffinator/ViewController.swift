@@ -42,6 +42,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.mapView.setRegion(region, animated: true)
         */
         
+        NetworkManager.load(closure: {(locations) in
+            if locations != nil {
+                DispatchQueue.main.async {
+                    for location in (locations as! [Location]?)! {
+                       
+                    }
+                }
+            }
+        })
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

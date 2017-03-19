@@ -16,6 +16,7 @@
 		365C1B851E7B2AA500F4415E /* CaffinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365C1B841E7B2AA500F4415E /* CaffinatorTests.swift */; };
 		365C1B901E7B2AA500F4415E /* CaffinatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365C1B8F1E7B2AA500F4415E /* CaffinatorUITests.swift */; };
 		365D85691E7F2C8E0014F582 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D85681E7F2C8E0014F582 /* Location.swift */; };
+		7396EAF71E7F32860028298A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7396EAF61E7F32860028298A /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		365C1B8F1E7B2AA500F4415E /* CaffinatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffinatorUITests.swift; sourceTree = "<group>"; };
 		365C1B911E7B2AA500F4415E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		365D85681E7F2C8E0014F582 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7396EAF61E7F32860028298A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		365C1B6B1E7B2AA400F4415E /* Caffinator */ = {
 			isa = PBXGroup;
 			children = (
+				7396EAF81E7F32910028298A /* Model */,
 				365C1B6C1E7B2AA400F4415E /* AppDelegate.swift */,
 				365C1B6E1E7B2AA400F4415E /* ViewController.swift */,
 				365C1B701E7B2AA400F4415E /* Main.storyboard */,
@@ -129,6 +132,14 @@
 				365C1B911E7B2AA500F4415E /* Info.plist */,
 			);
 			path = CaffinatorUITests;
+			sourceTree = "<group>";
+		};
+		7396EAF81E7F32910028298A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7396EAF61E7F32860028298A /* NetworkManager.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				365C1B751E7B2AA400F4415E /* Caffinator.xcdatamodeld in Sources */,
+				7396EAF71E7F32860028298A /* NetworkManager.swift in Sources */,
 				365C1B6F1E7B2AA400F4415E /* ViewController.swift in Sources */,
 				365D85691E7F2C8E0014F582 /* Location.swift in Sources */,
 				365C1B6D1E7B2AA400F4415E /* AppDelegate.swift in Sources */,
