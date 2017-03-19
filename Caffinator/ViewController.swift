@@ -36,12 +36,41 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         // actually start getting location
         self.manager.startUpdatingLocation()
         
-        // set the mapView's region
+        // TODO - set the mapView's initial region
         /*
         let region = MKCoordinateRegion(center: userLocation!, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         self.mapView.setRegion(region, animated: true)
         */
         
+        // detect rotation changes
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    // TODO - properly resize views upon rotation
+    func rotated() {
+        if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
+            
+        }
+        if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
+            
+        }
+    }
+    
+    // TODO - complete function body
+    func populateMap(){
+        // completion handler to be called after data is loaded
+        // if data has successfully loaded locations, add each annotation
+        // to the mapView
+    }
+    
+    // TODO - complete function body
+    func mapView(_ mapView: MKMapView,
+                 annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl){
+        let annotation = view.annotation
+        if let location = annotation as? Location {
+            // populate views with location information
+        }
     }
 
     override func didReceiveMemoryWarning() {
