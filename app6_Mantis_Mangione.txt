@@ -1,0 +1,4 @@
+Milestone 1: setting up mapview and other views for displaying data
+Milestone 2: getting data from the github gist and populating the mapview with such data.
+Milestone 3: tapping on annotation to populate the views.
+Milestone 4: handling landscape mode
