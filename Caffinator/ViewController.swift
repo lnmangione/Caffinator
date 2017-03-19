@@ -7,12 +7,41 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
+    @IBOutlet weak var mapView: MKMapView! {
+        didSet {
+            self.mapView.delegate = self
+            self.mapView.mapType = .standard
+            self.mapView.showsUserLocation = true
+        }
+    }
+    
+    let manager = CLLocationManager()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // setting up
+        self.manager.delegate = self
+        self.manager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // request permission
+        self.manager.requestWhenInUseAuthorization()
+        
+        // actually start getting location
+        self.manager.startUpdatingLocation()
+        
+        // set the mapView's region
+        /*
+        let region = MKCoordinateRegion(center: userLocation!, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        self.mapView.setRegion(region, animated: true)
+        */
+        
     }
 
     override func didReceiveMemoryWarning() {
