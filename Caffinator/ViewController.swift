@@ -36,7 +36,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         // actually start getting location
         self.manager.startUpdatingLocation()
         
-        // set the mapView's region
+        // TODO - set the mapView's initial region
         /*
         let region = MKCoordinateRegion(center: userLocation!, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         self.mapView.setRegion(region, animated: true)
