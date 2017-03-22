@@ -20,6 +20,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
+    @IBOutlet weak var infoView: UIView!
+    
+    @IBAction func toggleInfo(_ sender: Any) {
+        let segment = (sender as! UISegmentedControl)
+        if segment.selectedSegmentIndex == 0{
+            NotificationCenter.default.post(name: Notification.Name("ShowDetails"), object: nil)
+        }
+        if segment.selectedSegmentIndex == 1{
+            NotificationCenter.default.post(name: Notification.Name("ShowMenu"), object: nil)
+        }
+    }
+    
     let manager = CLLocationManager()
         
     override func viewDidLoad() {
@@ -36,27 +48,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         // actually start getting location
         self.manager.startUpdatingLocation()
         
-        // TODO - set the mapView's initial region
-        /*
-        let region = MKCoordinateRegion(center: userLocation!, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        // set the mapView's initial region
+        let walnutStreet = CLLocationCoordinate2D(latitude: 39.955333, longitude: -75.197939)
+        let region = MKCoordinateRegion(center: walnutStreet, span: MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025))
         self.mapView.setRegion(region, animated: true)
-        */
         
         // detect rotation changes
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
+        // add map pins to map
         NetworkManager.load(closure: {(locations) in
             if locations != nil {
-                DispatchQueue.main.async {
-                    for location in (locations as! [Location]?)! {
-                       
-                    }
+                NetworkManager.locations = locations as! [Location]
+                for location in NetworkManager.locations {
+                    location.addressToCoord()
+                    self.mapView.addAnnotation(location)
                 }
             }
         })
-        
-        
-        
     }
     
     // TODO - properly resize views upon rotation
@@ -67,13 +76,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
             
         }
-    }
-    
-    // TODO - complete function body
-    func populateMap(){
-        // completion handler to be called after data is loaded
-        // if data has successfully loaded locations, add each annotation
-        // to the mapView
     }
     
     // TODO - complete function body

@@ -56,9 +56,9 @@ class Location: NSObject, MKAnnotation {
         return nil
     }
     
-    func addressToCoord(_ address: String?) -> Void {
+    func addressToCoord() -> Void {
         let coder = CLGeocoder()
-        coder.geocodeAddressString(address!, completionHandler: {(placemarks: [CLPlacemark]?, error: Error?) in
+        coder.geocodeAddressString(address, completionHandler: {(placemarks: [CLPlacemark]?, error: Error?) in
                 self.coordinate = (placemarks![0].location?.coordinate)!
             })
         
