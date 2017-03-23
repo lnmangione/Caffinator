@@ -22,7 +22,7 @@ class NetworkManager {
             dataTask?.cancel()
         }
         
-        let url = URL(string: "https://gist.githubusercontent.com/mantism/ba4bd836351f90881fc0c08014c2eaf8/raw/0f8e15919a69f3f49f6041c90bd8725a9d48ac54/places.json")
+        let url = URL(string: "https://gist.githubusercontent.com/mantism/ba4bd836351f90881fc0c08014c2eaf8/raw/617814c1f47fa082e4d496e6d7f050c70a74e16b/places.json")
         
         dataTask = defaultSession.dataTask(with: url!, completionHandler: {
             data, response, error in

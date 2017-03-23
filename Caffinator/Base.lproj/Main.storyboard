@@ -41,7 +41,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW3-I8-Zoi">
-                                <rect key="frame" x="20" y="354" width="335" height="40"/>
+                                <rect key="frame" x="20" y="364" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="YJb-Lz-Hio"/>
                                 </constraints>
@@ -50,8 +50,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a location to get info" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l96-Z5-S0b">
-                                <rect key="frame" x="31" y="424" width="313" height="158"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="31" y="434" width="313" height="148"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -65,7 +65,7 @@
                             <constraint firstItem="IW3-I8-Zoi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="RBC-6R-TRN"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oUX-3b-McX" secondAttribute="bottom" constant="30" id="VPN-QH-9EQ"/>
                             <constraint firstAttribute="trailing" secondItem="IW3-I8-Zoi" secondAttribute="trailing" constant="20" id="Xa9-WF-QAO"/>
-                            <constraint firstItem="IW3-I8-Zoi" firstAttribute="top" secondItem="8S2-BO-le5" secondAttribute="bottom" constant="20" id="Xdt-OS-dzu"/>
+                            <constraint firstItem="IW3-I8-Zoi" firstAttribute="top" secondItem="8S2-BO-le5" secondAttribute="bottom" constant="30" id="Xdt-OS-dzu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l96-Z5-S0b" secondAttribute="trailing" constant="15" id="eUw-Tz-g8V"/>
                             <constraint firstItem="8S2-BO-le5" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="jSY-sX-JVK"/>
                             <constraint firstItem="l96-Z5-S0b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="r4O-6K-ruB"/>
