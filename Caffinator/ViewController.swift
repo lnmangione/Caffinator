@@ -102,7 +102,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         infoLabel.isHidden = shouldHide
         locationLabel.isHidden = shouldHide
     }
-    
+
     func mapView(_ mapView: MKMapView,
                  didSelect view: MKAnnotationView){
         let annotation = view.annotation
@@ -120,13 +120,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     func showMenu(){
         if (selectedLocation != nil){
-            infoLabel.text = "show menu here"
+            infoLabel.text = "Menu:\n" + (selectedLocation?.menu)!
         }
     }
     
     func showDetails(){
         if (selectedLocation != nil){
-            infoLabel.text = "show details here"
+            var details = ""
+            details += "Address: " + (selectedLocation?.address)! + "\n"
+            details += "Phone: " + (selectedLocation?.phone)! + "\n"
+            details += "Hours: " + (selectedLocation?.hours)!
+            infoLabel.text = details
         }
     }
 
@@ -134,7 +138,4 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
