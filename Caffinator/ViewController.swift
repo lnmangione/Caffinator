@@ -12,13 +12,16 @@ import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
-    @IBOutlet var superView: UIView!
+    @IBOutlet weak var mapViewHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var infoSegment: UISegmentedControl!
     var selectedLocation: Location?
     var mapConstraint1 : NSLayoutConstraint!
     var mapConstraint2 : NSLayoutConstraint!
+    
+    @IBOutlet var superView: UIView!
     
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
@@ -54,6 +57,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         // actually start getting location
         self.manager.startUpdatingLocation()
         
+        
         // set the mapView's initial region
         let walnutStreet = CLLocationCoordinate2D(latitude: 39.955333, longitude: -75.197939)
         let region = MKCoordinateRegion(center: walnutStreet, span: MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025))
@@ -72,20 +76,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 }
             }
         })
-       
+        
+        
         mapConstraint1 = NSLayoutConstraint(item: mapView, attribute: .height, relatedBy: .equal, toItem: superView, attribute: .height , multiplier: 0.5, constant: 0.0)
         mapConstraint2 = NSLayoutConstraint(item: mapView, attribute: .height, relatedBy: .equal, toItem: superView, attribute: .height , multiplier: 1.0, constant: 0.0)
         mapConstraint1.isActive = true
         mapConstraint2.isActive = false
+        mapViewHeight.isActive = false
+       
+      
     }
     
-    // TODO - properly resize views upon rotation
+   
     func rotated() {
         if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
             infoPane(shouldHide: true)
             //mapViewHeight.constant = 1
             mapConstraint1.isActive = false
             mapConstraint2.isActive = true
+            print (mapConstraint2.isActive)
             self.view.layoutIfNeeded()
         }
         if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
@@ -93,6 +102,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             //mapViewHeight.constant = 0.5
             mapConstraint1.isActive = true
             mapConstraint2.isActive = false
+            print (mapConstraint2.isActive)
             self.view.layoutIfNeeded()
         }
     }
