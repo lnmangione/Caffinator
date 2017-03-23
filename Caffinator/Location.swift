@@ -34,12 +34,14 @@ class Location: NSObject, MKAnnotation {
             if let data = data {
                 if let response = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions(rawValue:0)) as? [String: AnyObject] {
                     if let array: AnyObject = response["locations"] {
-                       for locDictonary in array as! [AnyObject] {
-                        if let locDictonary = locDictonary as? [String: AnyObject], let address = locDictonary["address"] as? String {
+                       for locDictionary in array as! [AnyObject] {
+                        if let locDictionary = locDictionary as? [String: AnyObject], let address = locDictionary["address"] as? String {
                             // Parse the search result
-                            let name = locDictonary["name"] as? String
-                            let phone = locDictonary["phone"] as? String
-                            locationResults.append(Location(name: name!, address: address, phone: phone!, hours: "", menu: ""))
+                            let name = locDictionary["name"] as? String
+                            let phone = locDictionary["phone"] as? String
+                            let hours = locDictionary["hours"] as? String
+                            let menu = locDictionary["menu"] as? String
+                            locationResults.append(Location(name: name!, address: address, phone: phone!, hours: hours!, menu: menu!))
                         } else {
                             print("Not a dictionary")
                         }

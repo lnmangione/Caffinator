@@ -22,7 +22,7 @@ class NetworkManager {
             dataTask?.cancel()
         }
         
-        let url = URL(string: "https://gist.githubusercontent.com/yagil/a58dfb3dbc6116cddf72104012d7e295/raw/fcb62ad63f14fb57c96a57deff7790c848fdb0bb/places.json")
+        let url = URL(string: "https://gist.githubusercontent.com/mantism/ba4bd836351f90881fc0c08014c2eaf8/raw/0f8e15919a69f3f49f6041c90bd8725a9d48ac54/places.json")
         
         dataTask = defaultSession.dataTask(with: url!, completionHandler: {
             data, response, error in
