@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8S2-BO-le5">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8S2-BO-le5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oUX-3b-McX">
@@ -41,7 +40,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW3-I8-Zoi">
-                                <rect key="frame" x="20" y="354" width="335" height="40"/>
+                                <rect key="frame" x="20" y="491.5" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="YJb-Lz-Hio"/>
                                 </constraints>
@@ -50,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a location to get info" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l96-Z5-S0b">
-                                <rect key="frame" x="31" y="424" width="313" height="158"/>
+                                <rect key="frame" x="31" y="561.5" width="313" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +66,6 @@
                             <constraint firstAttribute="trailing" secondItem="IW3-I8-Zoi" secondAttribute="trailing" constant="20" id="Xa9-WF-QAO"/>
                             <constraint firstItem="IW3-I8-Zoi" firstAttribute="top" secondItem="8S2-BO-le5" secondAttribute="bottom" constant="20" id="Xdt-OS-dzu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l96-Z5-S0b" secondAttribute="trailing" constant="15" id="eUw-Tz-g8V"/>
-                            <constraint firstItem="8S2-BO-le5" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="jSY-sX-JVK"/>
                             <constraint firstItem="l96-Z5-S0b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="r4O-6K-ruB"/>
                             <constraint firstItem="oUX-3b-McX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xr4-SJ-oBw"/>
                             <constraint firstAttribute="trailing" secondItem="8S2-BO-le5" secondAttribute="trailing" id="z69-ag-UP1"/>
@@ -78,7 +76,7 @@
                         <outlet property="infoSegment" destination="oUX-3b-McX" id="3it-qW-D4w"/>
                         <outlet property="locationLabel" destination="IW3-I8-Zoi" id="WmT-C7-EfP"/>
                         <outlet property="mapView" destination="8S2-BO-le5" id="jqP-AT-Jrt"/>
-                        <outlet property="mapViewHeight" destination="jSY-sX-JVK" id="Y8h-mH-Dtj"/>
+                        <outlet property="superView" destination="8bC-Xf-vdC" id="5tV-xk-0qd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
