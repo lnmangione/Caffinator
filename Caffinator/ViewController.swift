@@ -12,6 +12,12 @@ import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
+    @IBOutlet weak var mapViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var infoSegment: UISegmentedControl!
+    var selectedLocation: Location?
+    
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
             self.mapView.delegate = self
@@ -20,15 +26,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
-    @IBOutlet weak var infoView: UIView!
-    
     @IBAction func toggleInfo(_ sender: Any) {
         let segment = (sender as! UISegmentedControl)
         if segment.selectedSegmentIndex == 0{
-            NotificationCenter.default.post(name: Notification.Name("ShowDetails"), object: nil)
+            showDetails()
         }
         if segment.selectedSegmentIndex == 1{
-            NotificationCenter.default.post(name: Notification.Name("ShowMenu"), object: nil)
+            showMenu()
         }
     }
     
@@ -71,20 +75,47 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     // TODO - properly resize views upon rotation
     func rotated() {
         if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
-            
+            infoPane(shouldHide: true)
+            mapViewHeight.constant = 1
+            self.view.layoutIfNeeded()
         }
         if UIDeviceOrientationIsPortrait(UIDevice.current.orientation) {
-            
+            infoPane(shouldHide: false)
+            mapViewHeight.constant = 0.5
+            self.view.layoutIfNeeded()
         }
     }
     
-    // TODO - complete function body
+    func infoPane(shouldHide: Bool){
+        infoSegment.isHidden = shouldHide
+        infoLabel.isHidden = shouldHide
+        locationLabel.isHidden = shouldHide
+    }
+    
     func mapView(_ mapView: MKMapView,
-                 annotationView view: MKAnnotationView,
-                 calloutAccessoryControlTapped control: UIControl){
+                 didSelect view: MKAnnotationView){
         let annotation = view.annotation
         if let location = annotation as? Location {
-            // populate views with location information
+            selectedLocation = location
+            locationLabel.text = selectedLocation?.name
+            if infoSegment.selectedSegmentIndex == 0{
+                showDetails()
+            }
+            if infoSegment.selectedSegmentIndex == 1{
+                showMenu()
+            }
+        }
+    }
+    
+    func showMenu(){
+        if (selectedLocation != nil){
+            infoLabel.text = "show menu here"
+        }
+    }
+    
+    func showDetails(){
+        if (selectedLocation != nil){
+            infoLabel.text = "show details here"
         }
     }
 

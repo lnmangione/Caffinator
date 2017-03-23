@@ -16,8 +16,6 @@
 		365C1B851E7B2AA500F4415E /* CaffinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365C1B841E7B2AA500F4415E /* CaffinatorTests.swift */; };
 		365C1B901E7B2AA500F4415E /* CaffinatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365C1B8F1E7B2AA500F4415E /* CaffinatorUITests.swift */; };
 		365D85691E7F2C8E0014F582 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365D85681E7F2C8E0014F582 /* Location.swift */; };
-		3682EABE1E81F4F800C22EE8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682EABD1E81F4F800C22EE8 /* DetailsViewController.swift */; };
-		3682EAC01E81F7D500C22EE8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682EABF1E81F7D500C22EE8 /* MenuViewController.swift */; };
 		7396EAF71E7F32860028298A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7396EAF61E7F32860028298A /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +52,6 @@
 		365C1B8F1E7B2AA500F4415E /* CaffinatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffinatorUITests.swift; sourceTree = "<group>"; };
 		365C1B911E7B2AA500F4415E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		365D85681E7F2C8E0014F582 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		3682EABD1E81F4F800C22EE8 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		3682EABF1E81F7D500C22EE8 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7396EAF61E7F32860028298A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,8 +106,6 @@
 				7396EAF81E7F32910028298A /* Model */,
 				365C1B6C1E7B2AA400F4415E /* AppDelegate.swift */,
 				365C1B6E1E7B2AA400F4415E /* ViewController.swift */,
-				3682EABD1E81F4F800C22EE8 /* DetailsViewController.swift */,
-				3682EABF1E81F7D500C22EE8 /* MenuViewController.swift */,
 				365C1B701E7B2AA400F4415E /* Main.storyboard */,
 				365C1B761E7B2AA400F4415E /* Assets.xcassets */,
 				365C1B781E7B2AA400F4415E /* LaunchScreen.storyboard */,
@@ -288,9 +282,7 @@
 				365C1B751E7B2AA400F4415E /* Caffinator.xcdatamodeld in Sources */,
 				7396EAF71E7F32860028298A /* NetworkManager.swift in Sources */,
 				365C1B6F1E7B2AA400F4415E /* ViewController.swift in Sources */,
-				3682EAC01E81F7D500C22EE8 /* MenuViewController.swift in Sources */,
 				365D85691E7F2C8E0014F582 /* Location.swift in Sources */,
-				3682EABE1E81F4F800C22EE8 /* DetailsViewController.swift in Sources */,
 				365C1B6D1E7B2AA400F4415E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
